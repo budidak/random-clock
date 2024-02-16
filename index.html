@@ -31,6 +31,21 @@
         </div>
       </article>
     </main>
-    <script id="clock.js"></script>
+    <script id="clock.js">
+      const clock = document.getElementById("clock");
+      const text = document.getElementById("time");
+      const updateTime = () => {
+        const currentTime = new Date();
+        const timeString = currentTime.toLocaleTimeString();
+        text.textContent = timeString;
+        text.setAttribute(
+          "style",
+          `color: hsl(${Math.random() * 360}deg, 75%, 75%); 
+           top: ${Math.random() * 100}%; 
+           left: ${Math.random() * 100}%`
+        );
+      };
+      setInterval(updateTime, 3000);
+    </script>
   </body>
 </html>
